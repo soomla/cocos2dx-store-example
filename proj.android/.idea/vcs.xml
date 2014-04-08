@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store/submodules/android-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store/submodules/android-store/submodules/android-store-google-play" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
 </project>
 

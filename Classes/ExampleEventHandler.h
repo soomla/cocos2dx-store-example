@@ -52,25 +52,28 @@ public:
 
     virtual void onMarketPurchaseCancelled(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
 
-    virtual void onMarketPurchase(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
+    virtual void onMarketPurchase(soomla::CCPurchasableVirtualItem *purchasableVirtualItem, cocos2d::CCString *receiptUrl);
 
     virtual void onMarketPurchaseStarted(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
 
     virtual void onMarketPurchaseVerification(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
 
-    virtual void onRestoreTransactions(bool success);
+    virtual void onRestoreTransactionsFinished(bool success);
 
     virtual void onRestoreTransactionsStarted();
 
     virtual void onUnexpectedErrorInStore();
 
     virtual void onStoreControllerInitialized();
-	
+
+    virtual void onMarketItemsRefreshed();
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     virtual void onMarketRefund(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
 	virtual void onIabServiceStarted();
 	virtual void onIabServiceStopped();
 #endif
+
 };
 
 #endif /* !__ExampleEventHandler__ */

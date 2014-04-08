@@ -23,6 +23,7 @@ THE SOFTWARE.
 ****************************************************************************/
 package com.soomla.cocos2dx.example;
 
+import com.soomla.store.SoomlaApp;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -31,6 +32,7 @@ import com.soomla.cocos2dx.store.*;
 import android.os.Bundle;
 
 public class StoreExampleActivity extends Cocos2dxActivity{
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -43,6 +45,8 @@ public class StoreExampleActivity extends Cocos2dxActivity{
     	glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
 
         StoreControllerBridge.setGLView(glSurfaceView);
+
+        SoomlaApp.setExternalContext(getApplicationContext());
 
     	return glSurfaceView;
     }
