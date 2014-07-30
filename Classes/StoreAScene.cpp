@@ -65,7 +65,7 @@ void StoreAScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
     CC_ASSERT(mMainNode);
     CC_ASSERT(mTopNode);
     CC_ASSERT(mMuffinAmount);
-        CC_ASSERT(mGoodsTableView);
+    CC_ASSERT(mGoodsTableView);
     for(int i = 0; i < NUMBER_OF_ROWS; i++ ) {
         CC_ASSERT(mListRows[i]);
         mListRows[i]->retain();
@@ -85,7 +85,7 @@ void StoreAScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
     shiftToBottom(mBottomNode);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    CCStoreController::sharedStoreController()->startIabServiceInBg();
+    CCSoomlaStore::getInstance()->startIabServiceInBg();
 #endif
 
     ////*****
@@ -95,7 +95,7 @@ void StoreAScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
             std::string name = " ";
             std::string info = " ";
 
-            CCSoomlaError *soomlaError = NULL;
+            CCError *soomlaError = NULL;
 
             CCVirtualItem *virtualItem;
             virtualItem = CCStoreInfo::sharedStoreInfo()->getItemByItemId(itemId.c_str(), &soomlaError);
@@ -147,7 +147,7 @@ void StoreAScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
     mGoodsTableView->setDelegate(this);
     mGoodsTableView->reloadData();
 
-    CCSoomlaError *soomlaError = NULL;
+    CCError *soomlaError = NULL;
     int balance = CCStoreInventory::sharedStoreInventory()->getItemBalance("currency_muffin", &soomlaError);
     if (soomlaError) {
         CCStoreUtils::logException("StoreAScene::setCurrencyBalanceLabel", soomlaError);
@@ -208,7 +208,7 @@ void StoreAScene::onBack(CCObject *pSender) {
     CC_UNUSED_PARAM(pSender);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    CCStoreController::sharedStoreController()->stopIabServiceInBg();
+    CCSoomlaStore::getInstance()->stopIabServiceInBg();
 #endif
 
     CCScene *s = MainScene::getMainScene();
@@ -344,7 +344,7 @@ CCSize StoreAScene::tableCellSizeForIndex(CCTableView *table, unsigned int idx) 
 
 
 void StoreAScene::setProgressForItem(string &itemId, LevelIconWidget *pWidget) {
-    CCSoomlaError *soomlaError = NULL;
+    CCError *soomlaError = NULL;
     int progress = CCStoreInventory::sharedStoreInventory()->getGoodUpgradeLevel(itemId.c_str(), &soomlaError);
     if (soomlaError) {
         CCStoreUtils::logException("StoreAScene::setProgressForItem", soomlaError);
@@ -355,7 +355,7 @@ void StoreAScene::setProgressForItem(string &itemId, LevelIconWidget *pWidget) {
 }
 
 void StoreAScene::setEquippedForItem(string &itemId, LevelIconWidget *pWidget) {
-    CCSoomlaError *soomlaError = NULL;
+    CCError *soomlaError = NULL;
     bool equipped = CCStoreInventory::sharedStoreInventory()->isVirtualGoodEquipped(itemId.c_str(), &soomlaError);
     if (soomlaError) {
         CCStoreUtils::logException("StoreAScene::setEquippedForItem", soomlaError);

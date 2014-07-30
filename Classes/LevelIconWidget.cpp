@@ -101,7 +101,7 @@ void LevelIconWidget::onBuy(CCObject *pSender) {
 
     CC_UNUSED_PARAM(pSender);
 
-    soomla::CCSoomlaError *soomlaError = NULL;
+    soomla::CCError *soomlaError = NULL;
     soomla::CCStoreInventory::sharedStoreInventory()->buyItem(mItemId.c_str(), &soomlaError);
     if (soomlaError) {
         soomla::CCStoreUtils::logException("LevelIconWidget::onBuy", soomlaError);
@@ -112,7 +112,7 @@ void LevelIconWidget::onUpgrade(CCObject *pSender) {
 
     CC_UNUSED_PARAM(pSender);
 
-    soomla::CCSoomlaError *soomlaError = NULL;
+    soomla::CCError *soomlaError = NULL;
     soomla::CCStoreInventory::sharedStoreInventory()->upgradeGood(mItemId.c_str(), &soomlaError);
     if (soomlaError) {
         soomla::CCStoreUtils::logException("LevelIconWidget::onUpgrade", soomlaError);
@@ -123,7 +123,7 @@ void LevelIconWidget::onEquipment(CCObject *pSender) {
 
     CC_UNUSED_PARAM(pSender);
 
-    soomla::CCSoomlaError *soomlaError = NULL;
+    soomla::CCError *soomlaError = NULL;
     if (!this->mEquiped) {
         soomla::CCStoreInventory::sharedStoreInventory()->equipVirtualGood(mItemId.c_str(), &soomlaError);
     } else {

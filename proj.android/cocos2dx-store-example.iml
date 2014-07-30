@@ -29,6 +29,67 @@
         <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/AndroidStore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/submodules/android-store/SoomlaAndroidStore/gen" />
+          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/submodules/android-store/SoomlaAndroidStore/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/SoomlaAndroidCore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/Cocos2dxAndroidCore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/soomla-native/projects/cocos2dx-android-core/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/Cocos2dxAndroidStore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/projects/cocos2dx-android-store/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/square-otto-1.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/AndroidStoreGooglePlay.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

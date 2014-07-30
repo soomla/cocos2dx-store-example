@@ -6,10 +6,10 @@
 #ifndef __MuffinRushAssets_H_
 #define __MuffinRushAssets_H_
 
-#include "CCIStoreAssets.h"
+#include "CCStoreAssets.h"
 #include "cocos2d.h"
 
-class MuffinRushAssets: public soomla::CCIStoreAssets {
+class MuffinRushAssets: public soomla::CCStoreAssets {
     cocos2d::CCArray *mCurrencies;
     cocos2d::CCArray *mGoods;
     cocos2d::CCArray *mCurrencyPacks;

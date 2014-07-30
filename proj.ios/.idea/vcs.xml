@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store/submodules/android-store" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../extensions/cocos2dx-store/submodules/ios-store" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../../extensions/soomla-cocos2dx-core" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
 </project>

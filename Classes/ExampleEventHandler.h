@@ -18,7 +18,8 @@
 #define __ExampleEventHandler__
 
 #include <string>
-#include "CCEventHandler.h"
+#include "CCStoreEventHandler.h"
+#include "CCSoomlaMacros.h"
 
 
 #define EVENT_ON_CURRENCY_BALANCE_CHANGED "onCurrencyBalanceChanged"
@@ -29,7 +30,7 @@
 
 using namespace std;
 
-class ExampleEventHandler : public soomla::CCEventHandler {
+class ExampleEventHandler : public soomla::CCStoreEventHandler {
 public:
 
     virtual void onBillingNotSupported();
@@ -65,6 +66,8 @@ public:
     virtual void onUnexpectedErrorInStore();
 
     virtual void onStoreControllerInitialized();
+
+    virtual void onMarketItemsRefreshStarted();
 
     virtual void onMarketItemsRefreshed();
 

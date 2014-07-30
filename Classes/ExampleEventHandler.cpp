@@ -94,11 +94,15 @@ void ExampleEventHandler::onUnexpectedErrorInStore() {
 }
 
 void ExampleEventHandler::onStoreControllerInitialized() {
-    soomla::CCStoreUtils::logDebug(TAG, "StoreContorllerInitialized");
+    soomla::CCStoreUtils::logDebug(TAG, "StoreControllerInitialized");
+}
+
+void ExampleEventHandler::onMarketItemsRefreshStarted() {
+    soomla::CCStoreUtils::logDebug(TAG, "MarketItemsRefreshStarted");
 }
 
 void ExampleEventHandler::onMarketItemsRefreshed() {
-
+    soomla::CCStoreUtils::logDebug(TAG, "MarketItemsRefreshed");
 }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

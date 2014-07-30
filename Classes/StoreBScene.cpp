@@ -67,7 +67,7 @@ void StoreBScene::onBuy(CCObject* pSender) {
     if (pSender) {
         int tag = ((CCNode*)pSender)->getTag();
         string itemId = itemIdFromTag(tag);
-        CCSoomlaError *soomlaError = NULL;
+        CCError *soomlaError = NULL;
         CCStoreInventory::sharedStoreInventory()->buyItem(itemId.c_str(), &soomlaError);
         if (soomlaError) {
             CCStoreUtils::logException("StoreBScene::onBuy", soomlaError);
@@ -115,7 +115,7 @@ void StoreBScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
         CC_ASSERT(mGoodDescriptions[i] );
         CC_ASSERT(mPrices[i]           );
 
-        CCSoomlaError *soomlaError = NULL;
+        CCError *soomlaError = NULL;
         CCVirtualItem *virtualItem = CCStoreInfo::sharedStoreInfo()->getItemByItemId(
                 mGoodTitles[i]->getString(), &soomlaError);
         if (soomlaError) {
@@ -142,7 +142,7 @@ void StoreBScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
 
     this->setKeypadEnabled(true);
 
-    CCSoomlaError *soomlaError = NULL;
+    CCError *soomlaError = NULL;
     int balance = CCStoreInventory::sharedStoreInventory()->getItemBalance("currency_muffin", &soomlaError);
     if (soomlaError) {
         CCStoreUtils::logException("StoreBScene", soomlaError);

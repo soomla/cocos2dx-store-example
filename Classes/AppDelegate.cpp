@@ -19,6 +19,8 @@
 #include "MuffinRushAssets.h"
 #include "StoreAScene.h"
 #include "MainScene.h"
+#include "CCSoomlaMacros.h"
+#include "CCServiceManager.h"
 
 USING_NS_CC;
 
@@ -27,33 +29,34 @@ AppDelegate::AppDelegate() {
 }
 
 AppDelegate::~AppDelegate() {
-    soomla::CCSoomla::sharedSoomla()->removeEventHandler(handler);
+    soomla::CCStoreEventDispatcher::getInstance()->removeEventHandler(handler);
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
-    // We initialize CCStoreController and the event handler before
+
+    CCDictionary *commonParams = CCDictionary::create();
+    commonParams->setObject(CCString::create("ExampleCustomSecret"), "customSecret");
+    soomla::CCServiceManager::getInstance()->setCommonParams(commonParams);
+
+    // We initialize CCSoomlaStore and the event handler before
     // we open the store.
-    soomla::CCSoomla::sharedSoomla()->addEventHandler(handler);
+    soomla::CCStoreEventDispatcher::getInstance()->addEventHandler(handler);
 
-	MuffinRushAssets *assets = MuffinRushAssets::create();
+    // We initialize CCSoomlaStore and the event handler before
+    // we open the store.
+    MuffinRushAssets *assets = MuffinRushAssets::create();
+
     CCDictionary *storeParams = CCDictionary::create();
-    storeParams->
-        setObject(CCString::create("ExamplePublicKey"), "androidPublicKey");
-    storeParams->
-        setObject(CCString::create("ExampleCustomSecret"), "customSecret");
+    storeParams->setObject(CCString::create("ExamplePublicKey"), "androidPublicKey");
 
-    CCString *soomSec = CCString::create("ExampleSoomSecret");
-    soomla::CCStoreController::sharedStoreController()->setSoomSec(soomSec);
+    soomla::CCStoreService::initShared(assets, storeParams);
 
-    // This is the call to initialize CCStoreController
-    soomla::CCStoreController::initShared(assets, storeParams);
-
-	/*
-	 * ** Set the amount of each currency to 10,000 if the **
+    /*
+     * ** Set the amount of each currency to 10,000 if the **
      * ** balance drops under 1,000                        **
-	 *
-	 * ** Of course, this is just for testing...           **
-	 */
+     *
+     * ** Of course, this is just for testing...           **
+     */
 
     CCArray *currencies =
         soomla::CCStoreInfo::sharedStoreInfo()->getVirtualCurrencies();
