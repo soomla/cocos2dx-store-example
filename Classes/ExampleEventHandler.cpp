@@ -23,99 +23,99 @@
 USING_NS_CC;
 
 void ExampleEventHandler::onBillingNotSupported() {
-    soomla::CCStoreUtils::logDebug(TAG, "BillingNotSupported");
+    soomla::CCSoomlaUtils::logDebug(TAG, "BillingNotSupported");
 }
 
 void ExampleEventHandler::onBillingSupported() {
-    soomla::CCStoreUtils::logDebug(TAG, "BillingSupported");
+    soomla::CCSoomlaUtils::logDebug(TAG, "BillingSupported");
 }
 
 void ExampleEventHandler::onCurrencyBalanceChanged(soomla::CCVirtualCurrency *virtualCurrency, int balance, int amountAdded) {
-    soomla::CCStoreUtils::logDebug(TAG, "CurrencyBalanceChanged");
+    soomla::CCSoomlaUtils::logDebug(TAG, "CurrencyBalanceChanged");
     CCNotificationCenter::sharedNotificationCenter()->postNotification
         (EVENT_ON_CURRENCY_BALANCE_CHANGED, CCInteger::create(balance));
 }
 
 void ExampleEventHandler::onGoodBalanceChanged(soomla::CCVirtualGood *virtualGood, int balance, int amountAdded) {
-    soomla::CCStoreUtils::logDebug(TAG, "GoodBalanceChanged");
+    soomla::CCSoomlaUtils::logDebug(TAG, "GoodBalanceChanged");
     CCNotificationCenter::sharedNotificationCenter()->postNotification
         (EVENT_ON_GOOD_BALANCE_CHANGED, CCArray::create(virtualGood, CCInteger::create(balance), NULL));
 }
 
 void ExampleEventHandler::onGoodEquipped(soomla::CCEquippableVG *equippableVG) {
-    soomla::CCStoreUtils::logDebug(TAG, "GoodEquipped");
+    soomla::CCSoomlaUtils::logDebug(TAG, "GoodEquipped");
     CCNotificationCenter::sharedNotificationCenter()->postNotification(EVENT_ON_GOOD_EQUIPPED, equippableVG);
 }
 
 void ExampleEventHandler::onGoodUnEquipped(soomla::CCEquippableVG *equippableVG) {
-    soomla::CCStoreUtils::logDebug(TAG, "GoodUnEquipped");
+    soomla::CCSoomlaUtils::logDebug(TAG, "GoodUnEquipped");
     CCNotificationCenter::sharedNotificationCenter()->postNotification(EVENT_ON_GOOD_UNEQUIPPED, equippableVG);
 }
 
 void ExampleEventHandler::onGoodUpgrade(soomla::CCVirtualGood *virtualGood, soomla::CCUpgradeVG *upgradeVG) {
-    soomla::CCStoreUtils::logDebug(TAG, "GoodUpgrade");
+    soomla::CCSoomlaUtils::logDebug(TAG, "GoodUpgrade");
     CCNotificationCenter::sharedNotificationCenter()->postNotification(EVENT_ON_GOOD_UPGRADE, virtualGood);
 }
 
 void ExampleEventHandler::onItemPurchased(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "ItemPurchased");
+    soomla::CCSoomlaUtils::logDebug(TAG, "ItemPurchased");
 }
 
 void ExampleEventHandler::onItemPurchaseStarted(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "ItemPurchaseStarted");
+    soomla::CCSoomlaUtils::logDebug(TAG, "ItemPurchaseStarted");
 }
 
 void ExampleEventHandler::onMarketPurchaseCancelled(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketPurchaseCancelled");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketPurchaseCancelled");
 }
 
 void ExampleEventHandler::onMarketPurchase(soomla::CCPurchasableVirtualItem *purchasableVirtualItem, cocos2d::CCString *token, cocos2d::CCString *payload) {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketPurchase");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketPurchase");
 }
 
 void ExampleEventHandler::onMarketPurchaseStarted(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketPurchaseStarted");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketPurchaseStarted");
 }
 
 void ExampleEventHandler::onMarketPurchaseVerification(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketPurchaseVerification");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketPurchaseVerification");
 }
 
 void ExampleEventHandler::onRestoreTransactionsFinished(bool success) {
-    soomla::CCStoreUtils::logDebug(TAG, "RestoreTransactions");
+    soomla::CCSoomlaUtils::logDebug(TAG, "RestoreTransactions");
 }
 
 void ExampleEventHandler::onRestoreTransactionsStarted() {
-    soomla::CCStoreUtils::logDebug(TAG, "RestoreTransactionsStarted");
+    soomla::CCSoomlaUtils::logDebug(TAG, "RestoreTransactionsStarted");
 }
 
 void ExampleEventHandler::onUnexpectedErrorInStore() {
-    soomla::CCStoreUtils::logDebug(TAG, "UnexpectedErrorInStore");
+    soomla::CCSoomlaUtils::logDebug(TAG, "UnexpectedErrorInStore");
 }
 
 void ExampleEventHandler::onStoreControllerInitialized() {
-    soomla::CCStoreUtils::logDebug(TAG, "StoreControllerInitialized");
+    soomla::CCSoomlaUtils::logDebug(TAG, "StoreControllerInitialized");
 }
 
 void ExampleEventHandler::onMarketItemsRefreshStarted() {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketItemsRefreshStarted");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketItemsRefreshStarted");
 }
 
-void ExampleEventHandler::onMarketItemsRefreshed() {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketItemsRefreshed");
+void ExampleEventHandler::onMarketItemsRefreshed(cocos2d::CCArray *virtualItems) {
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketItemsRefreshed");
 }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
 void ExampleEventHandler::onMarketRefund(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
-    soomla::CCStoreUtils::logDebug(TAG, "MarketRefund");
+    soomla::CCSoomlaUtils::logDebug(TAG, "MarketRefund");
 }
 
 void ExampleEventHandler::onIabServiceStarted() {
-    soomla::CCStoreUtils::logDebug(TAG, "IabServiceStarted");
+    soomla::CCSoomlaUtils::logDebug(TAG, "IabServiceStarted");
 }
 
 void ExampleEventHandler::onIabServiceStopped() {
-    soomla::CCStoreUtils::logDebug(TAG, "IabServiceStopped");
+    soomla::CCSoomlaUtils::logDebug(TAG, "IabServiceStopped");
 }
 #endif

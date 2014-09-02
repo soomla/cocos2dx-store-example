@@ -139,8 +139,6 @@
 		9D3874DD1985EAA1001B1C84 /* TriggerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D38748D1985EAA1001B1C84 /* TriggerBase.cpp */; };
 		9D3874DE1985EAA1001B1C84 /* TriggerMng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D38748F1985EAA1001B1C84 /* TriggerMng.cpp */; };
 		9D3874DF1985EAA1001B1C84 /* TriggerObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D3874911985EAA1001B1C84 /* TriggerObj.cpp */; };
-		9D589A5D19863B0200649A55 /* libCocos2dXCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8046191980FA2200390E4C /* libCocos2dXCore.a */; };
-		9D589A5E19863B0200649A55 /* libCocos2dXStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D80461F1980FB6600390E4C /* libCocos2dXStore.a */; };
 		9D589A5F19863CD600649A55 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3D8861682F7B3002FB0C5 /* libcocos2dx.a */; };
 		9D788A2F1983546500471369 /* CCBAnimationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D7889FB1983546500471369 /* CCBAnimationManager.cpp */; };
 		9D788A301983546500471369 /* CCBFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D7889FD1983546500471369 /* CCBFileLoader.cpp */; };
@@ -183,6 +181,8 @@
 		9D788A951983549300471369 /* CCTableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D788A7A1983549300471369 /* CCTableView.cpp */; };
 		9D788A961983549300471369 /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D788A7C1983549300471369 /* CCTableViewCell.cpp */; };
 		9D91A62A17538F2000FCE86B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D91A62817538F0700FCE86B /* libsqlite3.0.dylib */; };
+		9DC237A419B5B38C003AFFE3 /* libCocos2dxCoreFromSources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372B757C8BD4B8621D0D8779 /* libCocos2dxCoreFromSources.a */; };
+		9DC237A519B5B38C003AFFE3 /* libCocos2dxStoreFromSources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372B7B5E0A3C2FDA3297F085 /* libCocos2dxStoreFromSources.a */; };
 		9DE21A961753902100D21B65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE21A941753901100D21B65 /* Security.framework */; };
 		9DE21A991753903300D21B65 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE21A971753902900D21B65 /* StoreKit.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -216,33 +216,33 @@
 			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
 			remoteInfo = cocos2dx;
 		};
-		9D8046181980FA2200390E4C /* PBXContainerItemProxy */ = {
+		372B7B4DEE454C471756CACC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9D8046141980FA2200390E4C /* Cocos2dXCore.xcodeproj */;
+			containerPortal = 372B716CAFDF140744B3BD40 /* Cocos2dxCoreFromSources.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C0B3C5EF168C6D0C00161FAA;
-			remoteInfo = Cocos2dXCore;
+			remoteInfo = Cocos2dxCoreFromSources;
 		};
-		9D80461E1980FB6600390E4C /* PBXContainerItemProxy */ = {
+		372B7F76F1208E926A590A6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9D80461A1980FB6600390E4C /* Cocos2dXStore.xcodeproj */;
+			containerPortal = 372B7C4C714C8BEE3FCB6F99 /* Cocos2dxStoreFromSources.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C0B3C5EF168C6D0C00161FAA;
-			remoteInfo = Cocos2dXStore;
+			remoteInfo = Cocos2dxStoreFromSources;
 		};
-		9D80465619810BFC00390E4C /* PBXContainerItemProxy */ = {
+		9DC2379619B5834D003AFFE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9D8046141980FA2200390E4C /* Cocos2dXCore.xcodeproj */;
+			containerPortal = 372B716CAFDF140744B3BD40 /* Cocos2dxCoreFromSources.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9D80462619810A3C00390E4C;
-			remoteInfo = Cocos2dXCore_v2;
+			remoteGlobalIDString = C0B3C5EE168C6D0C00161FAA;
+			remoteInfo = Cocos2dxCoreFromSources;
 		};
-		9D80469C1981156900390E4C /* PBXContainerItemProxy */ = {
+		9DC2379819B5834D003AFFE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9D80461A1980FB6600390E4C /* Cocos2dXStore.xcodeproj */;
+			containerPortal = 372B7C4C714C8BEE3FCB6F99 /* Cocos2dxStoreFromSources.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9D80465E1981152F00390E4C;
-			remoteInfo = Cocos2dXStore_v2;
+			remoteGlobalIDString = C0B3C5EE168C6D0C00161FAA;
+			remoteInfo = Cocos2dxStoreFromSources;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -317,6 +317,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		372B7055E7C50366326D717B /* load.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = load.c; sourceTree = "<group>"; };
+		372B716CAFDF140744B3BD40 /* Cocos2dxCoreFromSources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocos2dxCoreFromSources.xcodeproj; path = "../../../extensions/soomla-cocos2dx-core/development/Cocos2dxCoreFromSources.xcodeproj"; sourceTree = "<group>"; };
 		372B72708512C8B3898093F5 /* dump.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dump.c; sourceTree = "<group>"; };
 		372B7347487D9F3C54529351 /* pack_unpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pack_unpack.c; sourceTree = "<group>"; };
 		372B73B72647B810F3D4BB9D /* hashtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashtable.c; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 		372B7ADAED8FFD4D629E90CE /* strbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strbuffer.h; sourceTree = "<group>"; };
 		372B7B5D0CE98F3B57440B30 /* libCocos2dXiOSStore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocos2dXiOSStore.a; path = "/Users/vedi/Documents/Projects/soomla/cocos2d-x/extensions/cocos2dx-store/soomla-native/compilations/ios/debug/libCocos2dXiOSStore.a"; sourceTree = "<absolute>"; };
 		372B7B9030C9B7F792FBB5F3 /* value.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = value.c; sourceTree = "<group>"; };
+		372B7C4C714C8BEE3FCB6F99 /* Cocos2dxStoreFromSources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocos2dxStoreFromSources.xcodeproj; path = "../../../extensions/cocos2dx-store/development/Cocos2dxStoreFromSources.xcodeproj"; sourceTree = "<group>"; };
 		372B7C9391FB1CBC3036486A /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
 		372B7DC0456DEF0E01FCC15F /* jansson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jansson.h; sourceTree = "<group>"; };
 		372B7E185E0C6C147225C273 /* utf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf.h; sourceTree = "<group>"; };
@@ -610,8 +612,6 @@
 		9D788A7B1983549300471369 /* CCTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableView.h; sourceTree = "<group>"; };
 		9D788A7C1983549300471369 /* CCTableViewCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTableViewCell.cpp; sourceTree = "<group>"; };
 		9D788A7D1983549300471369 /* CCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableViewCell.h; sourceTree = "<group>"; };
-		9D8046141980FA2200390E4C /* Cocos2dXCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocos2dXCore.xcodeproj; path = "../../../extensions/soomla-cocos2dx-core/Cocos2dXCore.xcodeproj"; sourceTree = "<group>"; };
-		9D80461A1980FB6600390E4C /* Cocos2dXStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocos2dXStore.xcodeproj; path = "../../../extensions/cocos2dx-store/Cocos2dXStore.xcodeproj"; sourceTree = "<group>"; };
 		9D91A62817538F0700FCE86B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		9DE21A941753901100D21B65 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9DE21A971753902900D21B65 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -637,9 +637,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC237A419B5B38C003AFFE3 /* libCocos2dxCoreFromSources.a in Frameworks */,
+				9DC237A519B5B38C003AFFE3 /* libCocos2dxStoreFromSources.a in Frameworks */,
 				9D589A5F19863CD600649A55 /* libcocos2dx.a in Frameworks */,
-				9D589A5D19863B0200649A55 /* libCocos2dXCore.a in Frameworks */,
-				9D589A5E19863B0200649A55 /* libCocos2dXStore.a in Frameworks */,
 				C05F2F0C187AB971007C7025 /* AdSupport.framework in Frameworks */,
 				1ACB3244164770DE00914215 /* libcurl.a in Frameworks */,
 				9D91A62A17538F2000FCE86B /* libsqlite3.0.dylib in Frameworks */,
@@ -825,8 +825,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				9D80461A1980FB6600390E4C /* Cocos2dXStore.xcodeproj */,
-				9D8046141980FA2200390E4C /* Cocos2dXCore.xcodeproj */,
 				15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
 				15A3DA6B1682F8A6002FB0C5 /* CocosDenshion */,
@@ -836,6 +834,8 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				78C7DDAA14EBA5050085D0C2 /* Resources */,
 				372B7AE25810F50BF808A39C /* jansson */,
+				372B716CAFDF140744B3BD40 /* Cocos2dxCoreFromSources.xcodeproj */,
+				372B7C4C714C8BEE3FCB6F99 /* Cocos2dxStoreFromSources.xcodeproj */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -862,6 +862,22 @@
 				372B7A3B3D5710D60AA06C9A /* libSoomlaiOSStore.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		372B75FD4314002AC361BDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				372B757C8BD4B8621D0D8779 /* libCocos2dxCoreFromSources.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		372B76BFC4F754676EC7B387 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				372B7B5E0A3C2FDA3297F085 /* libCocos2dxStoreFromSources.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		372B7AE25810F50BF808A39C /* jansson */ = {
@@ -1489,22 +1505,6 @@
 			path = CCScrollView;
 			sourceTree = "<group>";
 		};
-		9D8046151980FA2200390E4C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9D8046191980FA2200390E4C /* libCocos2dXCore.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9D80461B1980FB6600390E4C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9D80461F1980FB6600390E4C /* libCocos2dXStore.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1519,9 +1519,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				9DC2379719B5834D003AFFE3 /* PBXTargetDependency */,
+				9DC2379919B5834D003AFFE3 /* PBXTargetDependency */,
 				15A3DA691682F881002FB0C5 /* PBXTargetDependency */,
-				9D80469D1981156900390E4C /* PBXTargetDependency */,
-				9D80465719810BFC00390E4C /* PBXTargetDependency */,
 			);
 			name = "cocos2dx-store-example";
 			productName = iphone;
@@ -1547,6 +1547,7 @@
 				German,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 372B75FD4314002AC361BDA1 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -1554,12 +1555,12 @@
 					ProjectRef = 15A3D87E1682F7B3002FB0C5 /* cocos2dx.xcodeproj */;
 				},
 				{
-					ProductGroup = 9D8046151980FA2200390E4C /* Products */;
-					ProjectRef = 9D8046141980FA2200390E4C /* Cocos2dXCore.xcodeproj */;
+					ProductGroup = 372B75FD4314002AC361BDA1 /* Products */;
+					ProjectRef = 372B716CAFDF140744B3BD40 /* Cocos2dxCoreFromSources.xcodeproj */;
 				},
 				{
-					ProductGroup = 9D80461B1980FB6600390E4C /* Products */;
-					ProjectRef = 9D80461A1980FB6600390E4C /* Cocos2dXStore.xcodeproj */;
+					ProductGroup = 372B76BFC4F754676EC7B387 /* Products */;
+					ProjectRef = 372B7C4C714C8BEE3FCB6F99 /* Cocos2dxStoreFromSources.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1577,18 +1578,18 @@
 			remoteRef = 15A3D8851682F7B3002FB0C5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9D8046191980FA2200390E4C /* libCocos2dXCore.a */ = {
+		372B757C8BD4B8621D0D8779 /* libCocos2dxCoreFromSources.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libCocos2dXCore.a;
-			remoteRef = 9D8046181980FA2200390E4C /* PBXContainerItemProxy */;
+			path = libCocos2dxCoreFromSources.a;
+			remoteRef = 372B7B4DEE454C471756CACC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9D80461F1980FB6600390E4C /* libCocos2dXStore.a */ = {
+		372B7B5E0A3C2FDA3297F085 /* libCocos2dxStoreFromSources.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libCocos2dXStore.a;
-			remoteRef = 9D80461E1980FB6600390E4C /* PBXContainerItemProxy */;
+			path = libCocos2dxStoreFromSources.a;
+			remoteRef = 372B7F76F1208E926A590A6F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1793,15 +1794,15 @@
 			name = cocos2dx;
 			targetProxy = 15A3DA681682F881002FB0C5 /* PBXContainerItemProxy */;
 		};
-		9D80465719810BFC00390E4C /* PBXTargetDependency */ = {
+		9DC2379719B5834D003AFFE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Cocos2dXCore_v2;
-			targetProxy = 9D80465619810BFC00390E4C /* PBXContainerItemProxy */;
+			name = Cocos2dxCoreFromSources;
+			targetProxy = 9DC2379619B5834D003AFFE3 /* PBXContainerItemProxy */;
 		};
-		9D80469D1981156900390E4C /* PBXTargetDependency */ = {
+		9DC2379919B5834D003AFFE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Cocos2dXStore_v2;
-			targetProxy = 9D80469C1981156900390E4C /* PBXContainerItemProxy */;
+			name = Cocos2dxStoreFromSources;
+			targetProxy = 9DC2379819B5834D003AFFE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1814,7 +1815,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1839,10 +1839,10 @@
 					"\"$(SRCROOT)/../../../extensions/CCBReader\"",
 					"\"$(SRCROOT)/../../../external/chipmunk/include\"/**",
 					"\"$(SRCROOT)/../../../external/janson\"",
-					"$(SRCROOT)/../cocos2d/extensions/soomla-cocos2dx-core/Soomla/**",
-					"$(SRCROOT)/../cocos2d/extensions/soomla-cocos2dx-core/soomla-native/compilations/ios/headers/**",
-					"$(SRCROOT)/../cocos2d/extensions/cocos2dx-store/Soomla/**",
-					"$(SRCROOT)/../cocos2d/extensions/cocos2dx-store/soomla-native/compilations/ios/headers/**",
+					"$(SRCROOT)/../../../extensions/soomla-cocos2dx-core/Soomla/**",
+					"$(SRCROOT)/../../../extensions/soomla-cocos2dx-core/build/ios/headers/**",
+					"$(SRCROOT)/../../../extensions/cocos2dx-store/Soomla/**",
+					"$(SRCROOT)/../../../extensions/cocos2dx-store/build/ios/headers/**",
 					"\"$(SRCROOT)/../../../extensions/CocoStudio\"",
 					"\"$(SRCROOT)/../../../extensions/GUI\"",
 				);
@@ -1868,7 +1868,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -1891,10 +1890,10 @@
 					"\"$(SRCROOT)/../../../extensions/CCBReader\"",
 					"\"$(SRCROOT)/../../../external/chipmunk/include\"/**",
 					"\"$(SRCROOT)/../../../external/janson\"",
-					"$(SRCROOT)/../cocos2d/extensions/soomla-cocos2dx-core/Soomla/**",
-					"$(SRCROOT)/../cocos2d/extensions/soomla-cocos2dx-core/soomla-native/compilations/ios/headers/**",
-					"$(SRCROOT)/../cocos2d/extensions/cocos2dx-store/Soomla/**",
-					"$(SRCROOT)/../cocos2d/extensions/cocos2dx-store/soomla-native/compilations/ios/headers/**",
+					"$(SRCROOT)/../../../extensions/soomla-cocos2dx-core/Soomla/**",
+					"$(SRCROOT)/../../../extensions/soomla-cocos2dx-core/build/ios/headers/**",
+					"$(SRCROOT)/../../../extensions/cocos2dx-store/Soomla/**",
+					"$(SRCROOT)/../../../extensions/cocos2dx-store/build/ios/headers/**",
 					"\"$(SRCROOT)/../../../extensions/CocoStudio\"",
 					"\"$(SRCROOT)/../../../extensions/GUI\"",
 				);
@@ -1917,10 +1916,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_VARIANTS = normal;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer: 小明 张 (L4ZF355VQS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小明 张 (L4ZF355VQS)";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1937,10 +1937,11 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer: 小明 张 (L4ZF355VQS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小明 张 (L4ZF355VQS)";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

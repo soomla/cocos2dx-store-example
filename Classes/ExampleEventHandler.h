@@ -69,7 +69,7 @@ public:
 
     virtual void onMarketItemsRefreshStarted();
 
-    virtual void onMarketItemsRefreshed();
+    virtual void onMarketItemsRefreshed(cocos2d::CCArray *virtualItems);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     virtual void onMarketRefund(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);

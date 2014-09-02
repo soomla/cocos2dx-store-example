@@ -70,7 +70,7 @@ void StoreBScene::onBuy(CCObject* pSender) {
         CCError *soomlaError = NULL;
         CCStoreInventory::sharedStoreInventory()->buyItem(itemId.c_str(), &soomlaError);
         if (soomlaError) {
-            CCStoreUtils::logException("StoreBScene::onBuy", soomlaError);
+            CCSoomlaUtils::logException("StoreBScene::onBuy", soomlaError);
             return;
         }
     }
@@ -119,7 +119,7 @@ void StoreBScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
         CCVirtualItem *virtualItem = CCStoreInfo::sharedStoreInfo()->getItemByItemId(
                 mGoodTitles[i]->getString(), &soomlaError);
         if (soomlaError) {
-            CCStoreUtils::logException("StoreBScene", soomlaError);
+            CCSoomlaUtils::logException("StoreBScene", soomlaError);
             continue;
         }
         CC_ASSERT(virtualItem);
@@ -145,7 +145,7 @@ void StoreBScene::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
     CCError *soomlaError = NULL;
     int balance = CCStoreInventory::sharedStoreInventory()->getItemBalance("currency_muffin", &soomlaError);
     if (soomlaError) {
-        CCStoreUtils::logException("StoreBScene", soomlaError);
+        CCSoomlaUtils::logException("StoreBScene", soomlaError);
         balance = 0;
         CCLog("Soomla balance error");
     }

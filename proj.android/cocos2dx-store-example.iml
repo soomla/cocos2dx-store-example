@@ -7,13 +7,15 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../cocos2dx/platform/android/java/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cocos2dx/platform/android/java/src" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="cocos2dx" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -29,22 +31,12 @@
         <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="Cocos2dxCoreFromSources" />
+    <orderEntry type="module" module-name="Cocos2dxStoreFromSources" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/AndroidStore.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/submodules/android-store/SoomlaAndroidStore/gen" />
-          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/submodules/android-store/SoomlaAndroidStore/src" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/SoomlaAndroidCore.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/build/android/billing-services/google-play/AndroidStoreGooglePlay.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -53,38 +45,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/Cocos2dxAndroidCore.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/soomla-native/projects/cocos2dx-android-core/src" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/Cocos2dxAndroidStore.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/projects/cocos2dx-android-store/src" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/square-otto-1.3.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/soomla-native/compilations/android/AndroidStoreGooglePlay.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/build/android/square-otto-1.3.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
