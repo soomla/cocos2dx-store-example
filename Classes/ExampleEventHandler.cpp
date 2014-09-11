@@ -15,7 +15,6 @@
  */
 
 #include "ExampleEventHandler.h"
-#include "Cocos2dxCore.h"
 #include "Cocos2dxStore.h"
 #include "cocos2d.h"
 

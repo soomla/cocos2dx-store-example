@@ -10,7 +10,6 @@
 #include "LevelIconWidget.h"
 
 #include "cocos2d.h"
-#include "Cocos2dxCore.h"
 #include "Cocos2dxStore.h"
 #include "cocos-ext.h"
 
