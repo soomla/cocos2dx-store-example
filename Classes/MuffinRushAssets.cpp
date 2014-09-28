@@ -296,7 +296,7 @@ bool MuffinRushAssets::init() {
 
     CCVirtualGood *noAdsLTVG = CCLifetimeVG::create(
             CCString::create("No Ads"),
-            CCString::create("Test LifeTimeVG non-consumable item."),
+            CCString::create("No More Ads!"),
             CCString::create("no_ads"),
             CCPurchaseWithMarket::createWithMarketItem(CCMarketItem::create(
                     CCString::create(NO_ADDS_LTVG_PRODUCT_ID),
