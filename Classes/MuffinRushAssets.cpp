@@ -349,7 +349,3 @@ cocos2d::CCArray *MuffinRushAssets::getCategories() {
     return mCategories;
 }
 
-cocos2d::CCArray *MuffinRushAssets::getNonConsumableItems() {
-    return mNonConsumableItems;
-}
-
