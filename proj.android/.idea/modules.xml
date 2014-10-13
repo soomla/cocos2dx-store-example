@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../../cocos2d-x/extensions/soomla-cocos2dx-core/development/Cocos2dxCoreFromSources.iml" filepath="$PROJECT_DIR$/../../../../cocos2d-x/extensions/soomla-cocos2dx-core/development/Cocos2dxCoreFromSources.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../cocos2d-x/extensions/cocos2dx-store/development/Cocos2dxStoreFromSources.iml" filepath="$PROJECT_DIR$/../../../../cocos2d-x/extensions/cocos2dx-store/development/Cocos2dxStoreFromSources.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../cocos2dx/platform/android/java/cocos2dx.iml" filepath="$PROJECT_DIR$/../../../cocos2dx/platform/android/java/cocos2dx.iml" />
       <module fileurl="file://$PROJECT_DIR$/cocos2dx-store-example.iml" filepath="$PROJECT_DIR$/cocos2dx-store-example.iml" />
     </modules>

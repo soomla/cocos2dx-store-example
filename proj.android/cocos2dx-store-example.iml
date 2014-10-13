@@ -31,8 +31,6 @@
         <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="Cocos2dxCoreFromSources" />
-    <orderEntry type="module" module-name="Cocos2dxStoreFromSources" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -46,6 +44,42 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/build/android/square-otto-1.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/build/android/Cocos2dxAndroidCore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/soomla-cocos2dx-core/build/android/SoomlaAndroidCore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/build/android/AndroidStore.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../extensions/cocos2dx-store/build/android/Cocos2dxAndroidStore.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
