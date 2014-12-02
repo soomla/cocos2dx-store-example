@@ -59,7 +59,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
      */
 
     CCArray *currencies =
-        soomla::CCStoreInfo::sharedStoreInfo()->getVirtualCurrencies();
+        soomla::CCStoreInfo::sharedStoreInfo()->getCurrencies();
 	CCObject *currencyObject;
 	CCARRAY_FOREACH(currencies, currencyObject) {
 		soomla::CCVirtualCurrency *vc =
