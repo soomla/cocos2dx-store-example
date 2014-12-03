@@ -57,7 +57,7 @@ void ExampleEventHandler::onGoodUpgrade(soomla::CCVirtualGood *virtualGood, soom
     CCNotificationCenter::sharedNotificationCenter()->postNotification(EVENT_ON_GOOD_UPGRADE, virtualGood);
 }
 
-void ExampleEventHandler::onItemPurchased(soomla::CCPurchasableVirtualItem *purchasableVirtualItem) {
+void ExampleEventHandler::onItemPurchased(soomla::CCPurchasableVirtualItem *purchasableVirtualItem, cocos2d::CCString *payload) {
     soomla::CCSoomlaUtils::logDebug(TAG, "ItemPurchased");
 }
 
@@ -89,11 +89,11 @@ void ExampleEventHandler::onRestoreTransactionsStarted() {
     soomla::CCSoomlaUtils::logDebug(TAG, "RestoreTransactionsStarted");
 }
 
-void ExampleEventHandler::onUnexpectedErrorInStore() {
+void ExampleEventHandler::onUnexpectedErrorInStore(cocos2d::CCString *errorMessage) {
     soomla::CCSoomlaUtils::logDebug(TAG, "UnexpectedErrorInStore");
 }
 
-void ExampleEventHandler::onStoreControllerInitialized() {
+void ExampleEventHandler::onSoomlaStoreInitialized() {
     soomla::CCSoomlaUtils::logDebug(TAG, "StoreControllerInitialized");
 }
 

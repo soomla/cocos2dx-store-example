@@ -11,3 +11,6 @@ proj.ios/*.xcodeproj/project.xcworkspace/xcuserdata
 proj.ios/*.xcodeproj/xcuserdata
 proj.ios/cocos2dx-store-example.xcodeproj/project.xcworkspace/xcshareddata/cocos2dx-store-example.xccheckout
 proj.ios/.idea/workspace.xml
+proj.mac/*.xcodeproj/project.xcworkspace/xcuserdata
+proj.mac/*.xcodeproj/xcuserdata
+proj.mac/cocos2dx-store-example.xcodeproj/project.xcworkspace/xcshareddata/cocos2dx-store-example.xccheckout
