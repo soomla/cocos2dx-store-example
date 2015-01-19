@@ -33,6 +33,7 @@ public:
     void setBalance(int balance);
     void setProgress(int progress);
     void setEquiped(bool equiped);
+    void updateAfford();
 
 private:
     std::string mItemId;
@@ -49,7 +50,9 @@ private:
     CCLabelTTF *mBalance;
 
     bool mEquipable;
+    bool mUpgradable;
     bool mEquiped;
+    int mCurrentBalance;
 
     //selectors
     void onBuy(CCObject *pSender);

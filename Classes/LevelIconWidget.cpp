@@ -19,7 +19,8 @@ LevelIconWidget::LevelIconWidget() {
     mEquipment = NULL;
     mPrice = NULL;
     mBalance = NULL;
-
+    mCurrentBalance = 0;
+    mUpgradable = false;
 }
 
 void LevelIconWidget::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
@@ -38,6 +39,7 @@ void LevelIconWidget::onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader) {
     CC_ASSERT(mBalance);
 
     mEquipable = mEquipment->isVisible();
+    mUpgradable = mButtonUpgrade->isVisible();
 }
 
 void LevelIconWidget::setData(char const *itemId, char const *name, char const *description, double price, int balance) {
@@ -49,6 +51,7 @@ void LevelIconWidget::setData(char const *itemId, char const *name, char const *
 }
 
 void LevelIconWidget::setBalance(int balance) {
+    mCurrentBalance = balance;
     mBalance->setString(CCString::createWithFormat("%d", balance)->getCString());
     if (mEquipable) {
         mButtonBuy->setVisible(balance == 0);
@@ -65,6 +68,32 @@ void LevelIconWidget::setEquiped(bool equiped) {
     this->mEquiped = equiped;
     mEquipment->setNormalSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(
             equiped ? "equipped_O.png" : "equip_O.png"));
+}
+
+void LevelIconWidget::updateAfford() {
+    if (mItemId.empty()) {
+        return;
+    }
+    
+    bool canAfford = soomla::CCStoreInventory::sharedStoreInventory()->canAfford(mItemId.c_str());
+    
+    if (mUpgradable) {
+        if (mButtonUpgrade != NULL) {
+            mButtonUpgrade->setVisible(canAfford);
+        }
+    }
+    else if (mEquipable) {
+        if (!mEquiped && (mCurrentBalance == 0)) {
+            if (mButtonBuy != NULL) {
+                mButtonBuy->setVisible(canAfford);
+            }
+        }
+    }
+    else {
+        if (mButtonBuy != NULL) {
+            mButtonBuy->setVisible(canAfford);
+        }
+    }
 }
 
 bool LevelIconWidget::onAssignCCBMemberVariable(CCObject *pTarget, char const *pMemberVariableName, CCNode *pNode) {

@@ -277,6 +277,10 @@ void StoreAScene::updateCurrencyBalance(CCInteger *pBalance) {
     char buf[20] = "/0";
     sprintf(buf, "%i", pBalance->getValue());
     mMuffinAmount->setString(buf);
+    
+    for (unsigned int i = 0; i < NUMBER_OF_ROWS; i++) {
+        mListItem[i]->updateAfford();
+    }
 }
 
 void StoreAScene::updateGoodBalance(CCArray *pParams) {
