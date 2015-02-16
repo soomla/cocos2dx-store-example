@@ -17,6 +17,7 @@
 #include "ExampleEventHandler.h"
 #include "Cocos2dxStore.h"
 #include "cocos2d.h"
+#include "MuffinRushAssets.h"
 
 #define TAG "ExampleEventHandler >>>"
 
@@ -103,6 +104,23 @@ void ExampleEventHandler::onMarketItemsRefreshStarted() {
 
 void ExampleEventHandler::onMarketItemsRefreshed(cocos2d::CCArray *virtualItems) {
     soomla::CCSoomlaUtils::logDebug(TAG, "MarketItemsRefreshed");
+    
+//    soomla::CCVirtualCurrencyPack *vg = dynamic_cast<soomla::CCVirtualCurrencyPack *>(soomla::CCStoreInfo::sharedStoreInfo()->getPurchasableItemWithProductId(FOURHUNDMUFF_PACK_PRODUCT_ID));
+    soomla::CCLifetimeVG *vg = dynamic_cast<soomla::CCLifetimeVG *>(soomla::CCStoreInfo::sharedStoreInfo()->getPurchasableItemWithProductId(NO_ADDS_LTVG_PRODUCT_ID));
+    if (vg != NULL) {
+        soomla::CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("NO ADS PRICE %s",
+                                                                        ((soomla::CCPurchaseWithMarket *)vg->getPurchaseType())->getMarketItem()->getMarketPriceAndCurrency()->getCString())->getCString());
+    }
+}
+
+void ExampleEventHandler::onMarketItemsRefreshFailed(cocos2d::CCString *errorMessage) {
+    soomla::CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("onMarketItemsRefreshFailed: %s", errorMessage->getCString())->getCString());
+    
+    soomla::CCLifetimeVG *vg = dynamic_cast<soomla::CCLifetimeVG *>(soomla::CCStoreInfo::sharedStoreInfo()->getPurchasableItemWithProductId(NO_ADDS_LTVG_PRODUCT_ID));
+    if (vg != NULL) {
+        soomla::CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("NO ADS PRICE %s",
+                                                                        ((soomla::CCPurchaseWithMarket *)vg->getPurchaseType())->getMarketItem()->getMarketPriceAndCurrency()->getCString())->getCString());
+    }
 }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

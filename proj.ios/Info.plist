@@ -20,7 +20,7 @@
 		<string>Icon-144.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.soomla.cocos2dx.example</string>
+	<string>com.soomla.examples.Cocos2dxStoreExample-iOS</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

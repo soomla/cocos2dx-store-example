@@ -19,19 +19,6 @@
 USING_NS_CC;
 using namespace soomla;
 
-#define MUFFIN_CURRENCY_ITEM_ID "currency_muffin"
-#define TENMUFF_PACK_PRODUCT_ID "android.test.refunded"
-#define FIFTYMUFF_PACK_PRODUCT_ID "android.test.canceled"
-#define FOURHUNDMUFF_PACK_PRODUCT_ID "android.test.purchased"
-#define THOUSANDMUFF_PACK_PRODUCT_ID "android.test.item_unavailable"
-#define NO_ADDS_LTVG_PRODUCT_ID "no_ads"
-
-#define MUFFINCAKE_ITEM_ID "fruit_cake"
-#define PAVLOVA_ITEM_ID "pavlova"
-#define CHOCLATECAKE_ITEM_ID "chocolate_cake"
-#define CREAMCUP_ITEM_ID "cream_cup"
-
-
 MuffinRushAssets *MuffinRushAssets::create() {
     MuffinRushAssets *ret = new MuffinRushAssets();
     ret->autorelease();

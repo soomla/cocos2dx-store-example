@@ -216,6 +216,20 @@
 			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
 			remoteInfo = cocos2dx;
 		};
+		F87570611A8B6BA900245301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F886DF3619EBADF200A3D899 /* Cocos2dXCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8694AD91A1CF680001738B4;
+			remoteInfo = "Cocos2dXCore Mac";
+		};
+		F87570651A8B6BA900245301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F886DF2D19EBADE600A3D899 /* Cocos2dXStore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F84483F71A2B8AF0002D9EC0;
+			remoteInfo = "Cocos2dXStore Mac";
+		};
 		F886DF3219EBADE600A3D899 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F886DF2D19EBADE600A3D899 /* Cocos2dXStore.xcodeproj */;
@@ -1515,6 +1529,7 @@
 			children = (
 				F886DF3319EBADE600A3D899 /* libCocos2dXStore.a */,
 				F886DF3519EBADE600A3D899 /* libCocos2dXStoreWithJsb.a */,
+				F87570661A8B6BA900245301 /* libCocos2dXStore Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1524,6 +1539,7 @@
 			children = (
 				F886DF3C19EBADF200A3D899 /* libCocos2dXCore.a */,
 				F886DF3E19EBADF200A3D899 /* libCocos2dXCoreWithJsb.a */,
+				F87570621A8B6BA900245301 /* libCocos2dXCore Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1599,6 +1615,20 @@
 			fileType = archive.ar;
 			path = libcocos2dx.a;
 			remoteRef = 15A3D8851682F7B3002FB0C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F87570621A8B6BA900245301 /* libCocos2dXCore Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCocos2dXCore Mac.a";
+			remoteRef = F87570611A8B6BA900245301 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F87570661A8B6BA900245301 /* libCocos2dXStore Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCocos2dXStore Mac.a";
+			remoteRef = F87570651A8B6BA900245301 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		F886DF3319EBADE600A3D899 /* libCocos2dXStore.a */ = {
