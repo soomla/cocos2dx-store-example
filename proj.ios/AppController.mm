@@ -8,8 +8,6 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "ServiceManager.h"
-#import "StoreService.h"
 
 @implementation AppController
 
@@ -38,8 +36,6 @@ static AppDelegate s_sharedApplication;
                                    multiSampling: NO
                                  numberOfSamples:0 ];
     [__glView setMultipleTouchEnabled:YES];
-
-    [[ServiceManager sharedServiceManager] registerService:[StoreService sharedStoreService]];
 
     // Use RootViewController manage EAGLView
     viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];

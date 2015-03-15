@@ -24,8 +24,6 @@ THE SOFTWARE.
 package com.soomla.cocos2dx.example;
 
 import android.os.Bundle;
-import com.soomla.cocos2dx.common.ServiceManager;
-import com.soomla.cocos2dx.store.StoreService;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -41,12 +39,6 @@ public class StoreExampleActivity extends Cocos2dxActivity{
     	Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
 
     	glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
-
-        // initialize services
-        final ServiceManager serviceManager = ServiceManager.getInstance();
-        serviceManager.setActivity(this);
-        serviceManager.setGlSurfaceView(glSurfaceView);
-        serviceManager.registerService(StoreService.getInstance());
 
     	return glSurfaceView;
     }

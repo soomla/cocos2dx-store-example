@@ -19,8 +19,6 @@
 #include "MuffinRushAssets.h"
 #include "StoreAScene.h"
 #include "MainScene.h"
-#include "CCSoomlaMacros.h"
-#include "CCServiceManager.h"
 
 USING_NS_CC;
 
@@ -34,9 +32,7 @@ AppDelegate::~AppDelegate() {
 
 bool AppDelegate::applicationDidFinishLaunching() {
 
-    CCDictionary *commonParams = CCDictionary::create();
-    commonParams->setObject(CCString::create("ExampleCustomSecret"), "customSecret");
-    soomla::CCServiceManager::getInstance()->setCommonParams(commonParams);
+    soomla::CCSoomla::initialize("customSecret");
 
     // We initialize CCSoomlaStore and the event handler before
     // we open the store.
@@ -48,8 +44,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     CCDictionary *storeParams = CCDictionary::create();
     storeParams->setObject(CCString::create("ExamplePublicKey"), "androidPublicKey");
+    storeParams->setObject(CCBool::create(true), "testPurchases");
 
-    soomla::CCStoreService::initShared(assets, storeParams);
+    soomla::CCSoomlaStore::initialize(assets, storeParams);
 
     /*
      * ** Set the amount of each currency to 10,000 if the **
