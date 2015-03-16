@@ -24,6 +24,9 @@ THE SOFTWARE.
 package com.soomla.cocos2dx.example;
 
 import android.os.Bundle;
+
+import com.soomla.SoomlaConfig;
+
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -39,6 +42,9 @@ public class StoreExampleActivity extends Cocos2dxActivity{
     	Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
 
     	glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
+
+        // Uncomment this if you need native debug logs
+        //SoomlaConfig.logDebug = true;
 
     	return glSurfaceView;
     }
