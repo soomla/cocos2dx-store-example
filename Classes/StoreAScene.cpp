@@ -178,29 +178,25 @@ void StoreAScene::onMoreMuffins(CCObject *pSender) {
 
 void StoreAScene::onEnter() {
     CCLayer::onEnter();
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreAScene::updateCurrencyBalance),
-            EVENT_ON_CURRENCY_BALANCE_CHANGED, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreAScene::updateGoodBalance),
-            EVENT_ON_GOOD_BALANCE_CHANGED, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreAScene::onGoodEquipped),
-            EVENT_ON_GOOD_EQUIPPED, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreAScene::onGoodUnEquipped),
-            EVENT_ON_GOOD_UNEQUIPPED, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreAScene::onGoodUpgrade),
-            EVENT_ON_GOOD_UPGRADE, NULL);
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreAScene::onCurrencyBalanceChanged),
+                                                                  CCStoreConsts::EVENT_CURRENCY_BALANCE_CHANGED, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreAScene::updateGoodBalance),
+                                                                  CCStoreConsts::EVENT_GOOD_BALANCE_CHANGED, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreAScene::onGoodEquipped),
+                                                                  CCStoreConsts::EVENT_GOOD_EQUIPPED, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreAScene::onGoodUnEquipped),
+                                                                  CCStoreConsts::EVENT_GOOD_UNEQUIPPED, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreAScene::onGoodUpgrade),
+                                                                  CCStoreConsts::EVENT_GOOD_UPGRADE, NULL);
 }
 
 void StoreAScene::onExit() {
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_CURRENCY_BALANCE_CHANGED);
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_GOOD_BALANCE_CHANGED);
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_GOOD_EQUIPPED);
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_GOOD_UNEQUIPPED);
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_GOOD_UPGRADE);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_CURRENCY_BALANCE_CHANGED);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_GOOD_BALANCE_CHANGED);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_GOOD_EQUIPPED);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_GOOD_UNEQUIPPED);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_GOOD_UPGRADE);
     CCLayer::onExit();
 }
 
@@ -273,6 +269,12 @@ CCScene *StoreAScene::getGoodsStoreScene() {
     return ccbReader->createSceneWithNodeGraphFromFile("ccb/StoreAScene.ccbi");
 }
 
+void StoreAScene::onCurrencyBalanceChanged(cocos2d::CCDictionary *eventData) {
+    CCInteger *pBalance = dynamic_cast<CCInteger *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_BALANCE));
+    
+    updateCurrencyBalance(pBalance);
+}
+
 void StoreAScene::updateCurrencyBalance(CCInteger *pBalance) {
     char buf[20] = "/0";
     sprintf(buf, "%i", pBalance->getValue());
@@ -283,9 +285,9 @@ void StoreAScene::updateCurrencyBalance(CCInteger *pBalance) {
     }
 }
 
-void StoreAScene::updateGoodBalance(CCArray *pParams) {
-    soomla::CCVirtualGood *virtualGood = (CCVirtualGood *) pParams->objectAtIndex(0);
-    CCInteger *balance = (CCInteger *) pParams->objectAtIndex(1);
+void StoreAScene::updateGoodBalance(cocos2d::CCDictionary *eventData) {
+    soomla::CCVirtualGood *virtualGood = dynamic_cast<CCVirtualGood *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_GOOD));
+    CCInteger *balance = dynamic_cast<CCInteger *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_BALANCE));
 
     ////*****
     for (unsigned int i = 0; i < NUMBER_OF_ROWS; i++) {
@@ -298,7 +300,9 @@ void StoreAScene::updateGoodBalance(CCArray *pParams) {
 }
 
 
-void StoreAScene::onGoodEquipped(soomla::CCVirtualGood *virtualGood) {
+void StoreAScene::onGoodEquipped(cocos2d::CCDictionary *eventData) {
+    soomla::CCEquippableVG *virtualGood = dynamic_cast<CCEquippableVG *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_EQUIPPABLEVG));
+    
     for (unsigned int i = 0; i < NUMBER_OF_ROWS; i++) {
         string itemId = itemIdFromTag(i);
         if (virtualGood->getItemId()->compare(itemId.c_str()) == 0) {
@@ -308,7 +312,9 @@ void StoreAScene::onGoodEquipped(soomla::CCVirtualGood *virtualGood) {
     }
 }
 
-void StoreAScene::onGoodUnEquipped(soomla::CCVirtualGood *virtualGood) {
+void StoreAScene::onGoodUnEquipped(cocos2d::CCDictionary *eventData) {
+    soomla::CCEquippableVG *virtualGood = dynamic_cast<CCEquippableVG *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_EQUIPPABLEVG));
+    
     for (unsigned int i = 0; i < NUMBER_OF_ROWS; i++) {
         string itemId = itemIdFromTag(i);
         if (virtualGood->getItemId()->compare(itemId.c_str()) == 0) {
@@ -318,7 +324,9 @@ void StoreAScene::onGoodUnEquipped(soomla::CCVirtualGood *virtualGood) {
     }
 }
 
-void StoreAScene::onGoodUpgrade(CCVirtualGood *virtualGood) {
+void StoreAScene::onGoodUpgrade(cocos2d::CCDictionary *eventData) {
+    soomla::CCVirtualGood *virtualGood = dynamic_cast<CCVirtualGood *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_GOOD));
+    
     for (unsigned int i = 0; i < NUMBER_OF_ROWS; i++) {
         string itemId = itemIdFromTag(i);
         if (virtualGood->getItemId()->compare(itemId.c_str()) == 0) {

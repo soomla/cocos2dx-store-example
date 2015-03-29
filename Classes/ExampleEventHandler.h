@@ -18,67 +18,58 @@
 #define __ExampleEventHandler__
 
 #include <string>
-#include "CCStoreEventHandler.h"
 #include "CCSoomlaMacros.h"
-
-
-#define EVENT_ON_CURRENCY_BALANCE_CHANGED "onCurrencyBalanceChanged"
-#define EVENT_ON_GOOD_BALANCE_CHANGED "onGoodBalanceChanged"
-#define EVENT_ON_GOOD_EQUIPPED "onGoodEquipped"
-#define EVENT_ON_GOOD_UNEQUIPPED "onGoodUnEquipped"
-#define EVENT_ON_GOOD_UPGRADE "onGoodUpgrade"
 
 using namespace std;
 
-class ExampleEventHandler : public soomla::CCStoreEventHandler {
+class ExampleEventHandler : public cocos2d::CCObject{
 public:
-
-    virtual void onBillingNotSupported();
-
-    virtual void onBillingSupported();
-
-    virtual void onCurrencyBalanceChanged(soomla::CCVirtualCurrency *virtualCurrency, int balance, int amountAdded);
-
-    virtual void onGoodBalanceChanged(soomla::CCVirtualGood *virtualGood, int balance, int amountAdded);
-
-    virtual void onGoodEquipped(soomla::CCEquippableVG *equippableVG);
-
-    virtual void onGoodUnEquipped(soomla::CCEquippableVG *equippableVG);
-
-    virtual void onGoodUpgrade(soomla::CCVirtualGood *virtualGood, soomla::CCUpgradeVG *upgradeVG);
-
-    virtual void onItemPurchased(soomla::CCPurchasableVirtualItem *purchasableVirtualItem, cocos2d::CCString *payload);
-
-    virtual void onItemPurchaseStarted(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
-
-    virtual void onMarketPurchaseCancelled(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
-
-    virtual void onMarketPurchase(soomla::CCPurchasableVirtualItem *purchasableVirtualItem, cocos2d::CCString *token, cocos2d::CCString *payload);
-
-    virtual void onMarketPurchaseStarted(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
-
-    virtual void onMarketPurchaseVerification(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
-
-    virtual void onRestoreTransactionsFinished(bool success);
-
-    virtual void onRestoreTransactionsStarted();
-
-    virtual void onUnexpectedErrorInStore(cocos2d::CCString *errorMessage);
-
-    virtual void onSoomlaStoreInitialized();
-
-    virtual void onMarketItemsRefreshStarted();
-
-    virtual void onMarketItemsRefreshed(cocos2d::CCArray *virtualItems);
     
-    virtual void onMarketItemsRefreshFailed(cocos2d::CCString *errorMessage);
+    ExampleEventHandler();
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    virtual void onMarketRefund(soomla::CCPurchasableVirtualItem *purchasableVirtualItem);
-	virtual void onIabServiceStarted();
-	virtual void onIabServiceStopped();
-#endif
+    virtual void onBillingNotSupported(cocos2d::CCDictionary *eventData);
 
+    virtual void onBillingSupported(cocos2d::CCDictionary *eventData);
+
+    virtual void onCurrencyBalanceChanged(cocos2d::CCDictionary *eventData);
+
+    virtual void onGoodBalanceChanged(cocos2d::CCDictionary *eventData);
+
+    virtual void onGoodEquipped(cocos2d::CCDictionary *eventData);
+
+    virtual void onGoodUnEquipped(cocos2d::CCDictionary *eventData);
+
+    virtual void onGoodUpgrade(cocos2d::CCDictionary *eventData);
+
+    virtual void onItemPurchased(cocos2d::CCDictionary *eventData);
+
+    virtual void onItemPurchaseStarted(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketPurchaseCancelled(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketPurchase(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketPurchaseStarted(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketPurchaseVerification(cocos2d::CCDictionary *eventData);
+    virtual void onRestoreTransactionsStarted(cocos2d::CCDictionary *eventData);
+
+    virtual void onRestoreTransactionsFinished(cocos2d::CCDictionary *eventData);
+
+    virtual void onUnexpectedErrorInStore(cocos2d::CCDictionary *eventData);
+
+    virtual void onSoomlaStoreInitialized(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketItemsRefreshed(cocos2d::CCDictionary *eventData);
+
+    virtual void onMarketItemsRefreshStarted(cocos2d::CCDictionary *eventData);
+    
+    virtual void onMarketItemsRefreshFailed(cocos2d::CCDictionary *eventData);
+
+    // Android Only
+    virtual void onMarketRefund(cocos2d::CCDictionary *eventData);
+	virtual void onIabServiceStarted(cocos2d::CCDictionary *eventData);
+	virtual void onIabServiceStopped(cocos2d::CCDictionary *eventData);
 };
 
 #endif /* !__ExampleEventHandler__ */

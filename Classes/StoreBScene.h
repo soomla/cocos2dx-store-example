@@ -56,7 +56,8 @@ public:
     virtual bool onAssignCCBMemberVariable(CCObject *pTarget, char const *pMemberVariableName, CCNode *pNode);
     virtual void onNodeLoaded(CCNode *pNode, CCNodeLoader *pNodeLoader);
 
-    virtual void updateCurrencyBalance(CCInteger *pBalance);
+    virtual void updateCurrencyBalance(cocos2d::CCInteger *balance);
+    virtual void onCurrencyBalanceChanged(cocos2d::CCDictionary *event);
 private:
     CCNode* mBackgroundNode;
     CCNode* mMainNode;

@@ -43,11 +43,12 @@ protected:
     virtual void onExit();
 
 private:
-    virtual void updateCurrencyBalance(CCInteger *pBalance);
-    virtual void updateGoodBalance(CCArray *pParams);
-    virtual void onGoodEquipped(soomla::CCVirtualGood *virtualGood);
-    virtual void onGoodUnEquipped(soomla::CCVirtualGood *virtualGood);
-    virtual void onGoodUpgrade(soomla::CCVirtualGood *virtualGood);
+    virtual void onCurrencyBalanceChanged(cocos2d::CCDictionary *event);
+    virtual void updateCurrencyBalance(cocos2d::CCInteger *balance);
+    virtual void updateGoodBalance(cocos2d::CCDictionary *event);
+    virtual void onGoodEquipped(cocos2d::CCDictionary *event);
+    virtual void onGoodUnEquipped(cocos2d::CCDictionary *event);
+    virtual void onGoodUpgrade(cocos2d::CCDictionary *event);
 
     //ccb
     CCNode *mBackgroundNode;
