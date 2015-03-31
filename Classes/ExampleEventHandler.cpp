@@ -128,6 +128,20 @@ void ExampleEventHandler::onMarketPurchase(CCDictionary *eventData) {
                                                             purchasable->getItemId()->getCString(),
                                                             token->getCString(),
                                                             payload->getCString())->getCString());
+    
+    // Android ONLY
+    __String *originalJSON = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ORIGINAL_JSON));
+    if (originalJSON != NULL) {
+        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Original JSON %s", originalJSON->getCString())->getCString());
+    }
+    __String *signature = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_SIGNATURE));
+    if (signature != NULL) {
+        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Signature %s", signature->getCString())->getCString());
+    }
+    __String *userId = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_USER_ID));
+    if (userId != NULL) {
+        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: User ID %s", userId->getCString())->getCString());
+    }
 }
 
 void ExampleEventHandler::onMarketPurchaseStarted(CCDictionary *eventData) {
