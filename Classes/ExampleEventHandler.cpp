@@ -130,17 +130,17 @@ void ExampleEventHandler::onMarketPurchase(CCDictionary *eventData) {
                                                             payload->getCString())->getCString());
     
     // Android ONLY
-    __String *originalJSON = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ORIGINAL_JSON));
+    CCString *originalJSON = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ORIGINAL_JSON));
     if (originalJSON != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Original JSON %s", originalJSON->getCString())->getCString());
+        CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("MarketPurchase: Original JSON %s", originalJSON->getCString())->getCString());
     }
-    __String *signature = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_SIGNATURE));
+    CCString *signature = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_SIGNATURE));
     if (signature != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Signature %s", signature->getCString())->getCString());
+        CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("MarketPurchase: Signature %s", signature->getCString())->getCString());
     }
-    __String *userId = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_USER_ID));
+    CCString *userId = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_USER_ID));
     if (userId != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: User ID %s", userId->getCString())->getCString());
+        CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("MarketPurchase: User ID %s", userId->getCString())->getCString());
     }
 }
 
@@ -180,6 +180,7 @@ void ExampleEventHandler::onMarketItemsRefreshed(CCDictionary *eventData) {
     CCObject *object;
     CCARRAY_FOREACH(marketItems, object) {
         CCMarketItem *marketItem = dynamic_cast<CCMarketItem *>(object);
+        
         CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("Market Item: %s %s",
                                                                 marketItem->getProductId()->getCString(),
                                                                 marketItem->getMarketPriceAndCurrency()->getCString())->getCString());
