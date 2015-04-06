@@ -6,7 +6,7 @@ This project contains examples for implementing all of SOOMLA's interfaces and u
 
 ## Getting started
 
-1. Obtain the Cocos2d-x framework either from [git](https://github.com/cocos2d/cocos2d-x) or from the [Cocos2d-x website](http://www.cocos2d-x.org/download). Make sure to use the latest **stable** version (v2.2 as of Oct 25 2013).
+1. Obtain the Cocos2d-x framework either from [git](https://github.com/cocos2d/cocos2d-x) or from the [Cocos2d-x website](http://www.cocos2d-x.org/download). Make sure to use the latest **stable** version (we tested with v2.2.5/v2.2.6).
     ```
     $ git clone git@github.com:cocos2d/cocos2d-x.git
     ```
