@@ -89,13 +89,13 @@ string StoreBScene::itemIdFromTag(int tag) {
 
 void StoreBScene::onEnter() {
     CCLayer::onEnter();
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,
-            callfuncO_selector(StoreBScene::updateCurrencyBalance),
-            EVENT_ON_CURRENCY_BALANCE_CHANGED, NULL);
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(StoreBScene::onCurrencyBalanceChanged),
+                                                                  CCStoreConsts::EVENT_CURRENCY_BALANCE_CHANGED, NULL);
 }
 
 void StoreBScene::onExit() {
-    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, EVENT_ON_CURRENCY_BALANCE_CHANGED);
+    CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, CCStoreConsts::EVENT_CURRENCY_BALANCE_CHANGED);
     CCLayer::onExit();
 }
 
@@ -179,6 +179,10 @@ bool StoreBScene::onAssignCCBMemberVariable(CCObject *pTarget, char const *pMemb
     }
 
     return false;
+}
+
+void StoreBScene::onCurrencyBalanceChanged(cocos2d::CCDictionary *eventData) {
+    updateCurrencyBalance(dynamic_cast<CCInteger *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_BALANCE)));
 }
 
 void StoreBScene::updateCurrencyBalance(CCInteger *pBalance) {

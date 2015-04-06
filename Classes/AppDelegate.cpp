@@ -27,19 +27,12 @@ AppDelegate::AppDelegate() {
 }
 
 AppDelegate::~AppDelegate() {
-    soomla::CCStoreEventDispatcher::getInstance()->removeEventHandler(handler);
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
 
     soomla::CCSoomla::initialize("customSecret");
 
-    // We initialize CCSoomlaStore and the event handler before
-    // we open the store.
-    soomla::CCStoreEventDispatcher::getInstance()->addEventHandler(handler);
-
-    // We initialize CCSoomlaStore and the event handler before
-    // we open the store.
     MuffinRushAssets *assets = MuffinRushAssets::create();
 
     CCDictionary *storeParams = CCDictionary::create();
