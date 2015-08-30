@@ -281,8 +281,7 @@ bool MuffinRushAssets::init() {
               __String::create("No More Ads!"),
               __String::create("no_ads"),
               CCPurchaseWithMarket::createWithMarketItem(CCMarketItem::create(
-                            __String::create(NO_ADDS_LTVG_PRODUCT_ID),
-                            __Integer::create(CCMarketItem::NONCONSUMABLE), CCDouble::create(1.99))
+                            __String::create(NO_ADDS_LTVG_PRODUCT_ID), CCDouble::create(1.99))
               )
     );
     mCurrencies = __Array::create(muffinCurrency, NULL);

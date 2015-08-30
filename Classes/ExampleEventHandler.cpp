@@ -45,7 +45,7 @@ ExampleEventHandler::ExampleEventHandler() {
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_RESTORE_TRANSACTION_FINISHED, CC_CALLBACK_1(ExampleEventHandler::onRestoreTransactionsFinished, this));
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_RESTORE_TRANSACTION_STARTED, CC_CALLBACK_1(ExampleEventHandler::onMarketItemsRefreshStarted, this));
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_SOOMLA_STORE_INITIALIZED, CC_CALLBACK_1(ExampleEventHandler::onSoomlaStoreInitialized, this));
-    Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_UNEXPECTED_ERROR_IN_STORE, CC_CALLBACK_1(ExampleEventHandler::onUnexpectedErrorInStore, this));
+    Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_UNEXPECTED_STORE_ERROR, CC_CALLBACK_1(ExampleEventHandler::onUnexpectedErrorInStore, this));
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_IAB_SERVICE_STARTED, CC_CALLBACK_1(ExampleEventHandler::onIabServiceStarted, this));
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_IAB_SERVICE_STOPPED, CC_CALLBACK_1(ExampleEventHandler::onIabServiceStopped, this));
     Director::getInstance()->getEventDispatcher()->addCustomEventListener(CCStoreConsts::EVENT_MARKET_REFUND, CC_CALLBACK_1(ExampleEventHandler::onMarketRefund, this));
@@ -125,25 +125,26 @@ void ExampleEventHandler::onMarketPurchaseCancelled(EventCustom *event) {
 void ExampleEventHandler::onMarketPurchase(EventCustom *event) {
     __Dictionary *eventData = (__Dictionary *)event->getUserData();
     CCPurchasableVirtualItem *purchasable = dynamic_cast<CCPurchasableVirtualItem *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_PURCHASABLE));
-    __String *token = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_TOKEN));
+    __Dictionary *extraInfo = dynamic_cast<__Dictionary *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_EXTRA_INFO));
     __String *payload = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_DEVELOPERPAYLOAD));
-    CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: %s token: %s payload: %s",
-                                                            purchasable->getItemId()->getCString(),
-                                                            token->getCString(),
-                                                            payload->getCString())->getCString());
-    
-    // Android ONLY
-    __String *originalJSON = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ORIGINAL_JSON));
-    if (originalJSON != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Original JSON %s", originalJSON->getCString())->getCString());
-    }
-    __String *signature = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_SIGNATURE));
-    if (signature != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Signature %s", signature->getCString())->getCString());
-    }
-    __String *userId = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_USER_ID));
-    if (userId != NULL) {
-        CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: User ID %s", userId->getCString())->getCString());
+    CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: %s payload: %s",
+            purchasable->getItemId()->getCString(),
+            payload->getCString())->getCString());
+
+    if (extraInfo) {
+        // Android ONLY
+        __String *originalJSON = dynamic_cast<__String *>(extraInfo->objectForKey(CCStoreConsts::DICT_ELEMENT_ORIGINAL_JSON));
+        if (originalJSON != NULL) {
+            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Original JSON %s", originalJSON->getCString())->getCString());
+        }
+        __String *signature = dynamic_cast<__String *>(extraInfo->objectForKey(CCStoreConsts::DICT_ELEMENT_SIGNATURE));
+        if (signature != NULL) {
+            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: Signature %s", signature->getCString())->getCString());
+        }
+        __String *userId = dynamic_cast<__String *>(extraInfo->objectForKey(CCStoreConsts::DICT_ELEMENT_USER_ID));
+        if (userId != NULL) {
+            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("MarketPurchase: User ID %s", userId->getCString())->getCString());
+        }
     }
 }
 
@@ -171,8 +172,8 @@ void ExampleEventHandler::onRestoreTransactionsFinished(EventCustom *event) {
 
 void ExampleEventHandler::onUnexpectedErrorInStore(EventCustom *event) {
     __Dictionary *eventData = (__Dictionary *)event->getUserData();
-    __String *errorMessage = dynamic_cast<__String *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ERROR_MESSAGE));
-    CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("UnexpectedErrorInStore: %s", errorMessage->getCString())->getCString());
+    __Integer *errorCode = dynamic_cast<__Integer *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ERROR_CODE));
+    CCSoomlaUtils::logDebug(TAG, __String::createWithFormat("UnexpectedErrorInStore: %d", errorCode->getValue())->getCString());
 }
 
 void ExampleEventHandler::onSoomlaStoreInitialized(EventCustom *event) {
