@@ -56,7 +56,7 @@ public:
 
     virtual void onRestoreTransactionsFinished(cocos2d::CCDictionary *eventData);
 
-    virtual void onUnexpectedErrorInStore(cocos2d::CCDictionary *eventData);
+    virtual void onUnexpectedStoreError(cocos2d::CCDictionary *eventData);
 
     virtual void onSoomlaStoreInitialized(cocos2d::CCDictionary *eventData);
 
