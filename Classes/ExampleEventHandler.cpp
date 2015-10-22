@@ -50,8 +50,8 @@ ExampleEventHandler::ExampleEventHandler() {
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onMarketItemsRefreshStarted),
                                                                   CCStoreConsts::EVENT_RESTORE_TRANSACTION_STARTED, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onSoomlaStoreInitialized), CCStoreConsts::EVENT_SOOMLA_STORE_INITIALIZED, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onUnexpectedErrorInStore),
-                                                                  CCStoreConsts::EVENT_UNEXPECTED_ERROR_IN_STORE, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(::ExampleEventHandler::onUnexpectedStoreError),
+                                                                  CCStoreConsts::EVENT_UNEXPECTED_STORE_ERROR, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onIabServiceStarted), CCStoreConsts::EVENT_IAB_SERVICE_STARTED, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onIabServiceStopped), CCStoreConsts::EVENT_IAB_SERVICE_STOPPED, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(ExampleEventHandler::onMarketRefund), CCStoreConsts::EVENT_MARKET_REFUND, NULL);
@@ -122,11 +122,9 @@ void ExampleEventHandler::onMarketPurchaseCancelled(CCDictionary *eventData) {
 
 void ExampleEventHandler::onMarketPurchase(CCDictionary *eventData) {
     CCPurchasableVirtualItem *purchasable = dynamic_cast<CCPurchasableVirtualItem *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_PURCHASABLE));
-    CCString *token = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_TOKEN));
     CCString *payload = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_DEVELOPERPAYLOAD));
-    CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("MarketPurchase: %s token: %s payload: %s",
+    CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("MarketPurchase: %s payload: %s",
                                                             purchasable->getItemId()->getCString(),
-                                                            token->getCString(),
                                                             payload->getCString())->getCString());
     
     // Android ONLY
@@ -163,9 +161,9 @@ void ExampleEventHandler::onRestoreTransactionsFinished(CCDictionary *eventData)
     CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("RestoreTransactionsFinished: %s", success ? "YES" : "NO")->getCString());
 }
 
-void ExampleEventHandler::onUnexpectedErrorInStore(CCDictionary *eventData) {
-    CCString *errorMessage = dynamic_cast<CCString *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ERROR_MESSAGE));
-    CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("UnexpectedErrorInStore: %s", errorMessage->getCString())->getCString());
+void ExampleEventHandler::onUnexpectedStoreError(CCDictionary *eventData) {
+    CCInteger *errorCode = dynamic_cast<CCInteger *>(eventData->objectForKey(CCStoreConsts::DICT_ELEMENT_ERROR_CODE));
+    CCSoomlaUtils::logDebug(TAG, CCString::createWithFormat("OnUnexpectedStoreError: %d", errorCode->getValue())->getCString());
 }
 
 void ExampleEventHandler::onSoomlaStoreInitialized(CCDictionary *eventData) {
