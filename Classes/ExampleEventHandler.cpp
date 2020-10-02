@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+//header files 
 #include "ExampleEventHandler.h"
 #include "cocos2d.h"
 #include "CCStoreInfo.h"
 #include "MuffinRushAssets.h"
-
+//macros
 #define TAG "ExampleEventHandler >>>"
 
 USING_NS_CC;
